@@ -1,0 +1,6 @@
+resolve: {
+     fallback: {
+       crypto: false,
+     },
+   },
+   

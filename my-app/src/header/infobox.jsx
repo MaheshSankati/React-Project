@@ -1,21 +1,25 @@
 import React from "react";
-import "./infobox.css";
+import icon01 from "../assets/icon-01.png";
+import icon02 from "../assets/icon-02.png";
+import icon03 from "../assets/icon-03.png";
+import icon04 from "../assets/icon-04.png";
+
 
 const Card = ({ icon, title, description, delay }) => {
   return (
     <div
-      className={`col-md-6 col-lg-3 mt-1-9 wow fadeInUp`}
-      data-wow-delay={delay}
+      className="w-full sm:w-1/2 lg:w-1/5 transition-transform duration-300 transform hover:-translate-y-2"
+      style={{ animationDelay: delay }}
     >
-      <div className="card card-style1">
-        <div className="card-body">
-          <div className="info-icon">
-            <img src={icon} alt="Icon" className="w-75px" />
+      <div className="border-none shadow-md hover:shadow-lg bg-white">
+        <div className="text-center pl-2.5 h-[250px] w-[165px] flex flex-col items-center justify-center">
+          <div className="mb-5">
+            <img src={icon} alt="Icon" className="w-[70px]" />
           </div>
-          <h4 className="h5 borders-bottom border-color-extra-light-gray pb-3 pb-lg-4 mb-3 mb-lg-4">
+          <h4 className="text-lg font-semibold border-b-2 border-gray-200 pb-3 mb-4">
             {title}
           </h4>
-          <p className="mb-0">{description}</p>
+          <p className="text-sm text-gray-600">{description}</p>
         </div>
       </div>
     </div>
@@ -25,28 +29,28 @@ const Card = ({ icon, title, description, delay }) => {
 const InfoBox = () => {
   const cardData = [
     {
-      icon: "img/icons/icon-01.png",
+      icon: icon01,
       title: "Engine Servicing",
       description:
         "We use contemporary test device system to carry out engine diagnostics and car wash.",
       delay: "200ms",
     },
     {
-      icon: "img/icons/icon-02.png",
+      icon: icon02,
       title: "Diagnostic Tests",
       description:
         "We use contemporary test device system to carry out engine diagnostics and car wash.",
       delay: "300ms",
     },
     {
-      icon: "img/icons/icon-03.png",
+      icon: icon03,
       title: "Interior Cleaning",
       description:
         "We use contemporary test device system to carry out engine diagnostics and car wash.",
       delay: "400ms",
     },
     {
-      icon: "img/icons/icon-04.png",
+      icon: icon04,
       title: "Vacuum Cleaning",
       description:
         "We use contemporary test device system to carry out engine diagnostics and car wash.",
@@ -55,10 +59,12 @@ const InfoBox = () => {
   ];
 
   return (
-    <section className="info-box">
-      <div className="services">... Services ...</div>
-      <div className="container">
-        <div className="row info-box-number mb-3 mt-n1-9">
+    <section className="py-12 bg-white">
+      <div className="text-center text-2xl font-semibold text-gray-800 mb-8">
+        Services
+      </div>
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {cardData.map((card, index) => (
             <Card
               key={index}

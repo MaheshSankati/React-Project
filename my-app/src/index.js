@@ -1,22 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-// import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Navbarr from './header/head';
-import InfoBox from './header/infobox';
-// import AboutSection from './header/aboutus';
-
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import Mainpage from "./mainpage";
+// import App from "./App";
+// import HowItWorks from "./"
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Navbarr />
-    <InfoBox/>
-    {/* <AboutSection/> */}
-
+    {/* <App/> */}
+    <Mainpage />
   </React.StrictMode>
 );
 
