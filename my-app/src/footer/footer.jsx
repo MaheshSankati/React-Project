@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Appointment Section */}
           <div className="p-4">
             <h5 className="text-lg font-bold">Appointment</h5>
-            <p>(+19) 123 456 789</p>
+            <p>(+91) 9133077705</p>
           </div>
           {/* Hours Section */}
           <div className="p-4">
@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="p-4">
             <h5 className="text-lg font-bold">Address</h5>
             <p>
-              66 Guild Street 512B, Great <br /> North Town.
+              Road No. 2, Kukatpally <br /> Hyderabad.
             </p>
           </div>
         </div>
@@ -29,16 +29,8 @@ const Footer = () => {
       {/* Middle Section */}
       <div className="container mx-auto px-4 py-8 flex flex-wrap justify-between">
         {/* Footer Logo Section */}
-        <div className="w-full md:w-1/3 mb-8 md:mb-0">
-          <div className="mb-6">
-            <a href="index.html">
-              <img
-                src="img/logos/footer-light-logo.png"
-                alt="Footer Logo"
-                className="max-w-[150px]"
-              />
-            </a>
-          </div>
+        <div className="w-full md:w-1/3 mb-8 md:mb-0 ml-12">
+        <h3 className="text-lg font-bold mb-4">Bunny's Car Washing</h3>
           <p>
             It is built for auto wash and <br /> car maintenance shops but is <br />
             suitable for all companies <br /> with related services.
@@ -46,26 +38,26 @@ const Footer = () => {
         </div>
 
         {/* Services Section */}
-        <div className="w-full md:w-1/4 mb-8 md:mb-0">
+        <div className="w-full md:w-1/4 mb-8 md:mb-0 mr-16">
           <h3 className="text-lg font-bold mb-4">Service</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/standard-wash" className="hover:text-gray-300">
+              <a href="/standard-car-washing" className="hover:text-gray-300">
                 Standard Car Wash
               </a>
             </li>
             <li>
-              <a href="/vacuum" className="hover:text-gray-300">
+              <a href="/vacuum-cleaning" className="hover:text-gray-300">
                 Vacuum Cleaning
               </a>
             </li>
             <li>
-              <a href="/inner-detailing" className="hover:text-gray-300">
+              <a href="/inner-detailing-wash" className="hover:text-gray-300">
                 Inner Detailing Wash
               </a>
             </li>
             <li>
-              <a href="/total-wash" className="hover:text-gray-300">
+              <a href="/total-car-wash" className="hover:text-gray-300">
                 Total Car Wash
               </a>
             </li>
@@ -82,7 +74,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="services" className="hover:text-gray-300">
+              <a href="our-services" className="hover:text-gray-300">
                 Service
               </a>
             </li>

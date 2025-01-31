@@ -9,7 +9,7 @@ const CarWashBooking = () => {
     time: "",
     plan: "Basic Cleaning",
   });
-
+ 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

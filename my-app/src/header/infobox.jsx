@@ -8,10 +8,10 @@ import icon04 from "../assets/icon-04.png";
 const Card = ({ icon, title, description, delay }) => {
   return (
     <div
-      className="w-full sm:w-1/2 lg:w-1/5 transition-transform duration-300 transform hover:-translate-y-2"
+      className="w-full sm:w-1/2 lg:w-1/5 transition-transform duration-300 transform hover:-translate-y-2 "
       style={{ animationDelay: delay }}
     >
-      <div className="border-none shadow-md hover:shadow-lg bg-white">
+      <div className="border-2 shadow-md hover:shadow-lg bg-white">
         <div className="text-center pl-2.5 h-[250px] w-[165px] flex flex-col items-center justify-center">
           <div className="mb-5">
             <img src={icon} alt="Icon" className="w-[70px]" />
@@ -60,9 +60,9 @@ const InfoBox = () => {
 
   return (
     <section className="py-12 bg-white">
-      <div className="text-center text-2xl font-semibold text-gray-800 mb-8">
+      {/* <div className="text-center text-2xl font-semibold text-gray-800 mb-8">
         Services
-      </div>
+      </div> */}
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center gap-4">
           {cardData.map((card, index) => (

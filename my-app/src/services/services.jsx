@@ -32,7 +32,7 @@ const ServiceCard = ({ image, number, title, description, link }) => {
   );
 };
 
-const ServicesSection = () => {
+const Services = () => {
   const services = [
     {
       // image: {service01},
@@ -76,14 +76,13 @@ const ServicesSection = () => {
         <div className="w-12 h-1 bg-red-600 mx-auto mt-2"></div>
       </div>
       <div className="relative overflow-scroll h-[250px] w-full p-5">
-      <div className="marquee flex gap-6 items-center h-full">
+      <div className="flex gap-6 items-center h-full">
         <img src={service01} alt="Service 1" className="h-full w-auto" />
         <img src={service02} alt="Service 2" className="h-full w-auto" />
         <img src={service03} alt="Service 3" className="h-full w-auto" />
         <img src={service04} alt="Service 4" className="h-full w-auto" />
       </div>
-    </div>
-      <div className="mb-20  gap-6 p-6 flex">
+      <div className="mb-20 gap-6 items-center p-6 flex ">
         {services.map((service, index) => (
           <ServiceCard
             key={index}
@@ -95,15 +94,8 @@ const ServicesSection = () => {
           />
         ))}
       </div>
-    </section>
-  );
-};
-
-const Services = () => {
-  return (
-    <div>
-      <ServicesSection />
     </div>
+    </section>
   );
 };
 

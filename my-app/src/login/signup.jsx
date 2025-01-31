@@ -69,7 +69,7 @@ const Signup = () => {
 
           {/* Submit Button */}
           <button
-            type="submit"
+            type="submit" to="/login"
             className="w-full py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none"
           >
             Sign Up

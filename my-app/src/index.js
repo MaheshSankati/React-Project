@@ -4,12 +4,16 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Mainpage from "./mainpage";
 // import App from "./App";
-// import HowItWorks from "./"
+// import UncontrolledExample from "./services/servicess";
+
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App/> */}
     <Mainpage />
+    {/* <UncontrolledExample/> */}
   </React.StrictMode>
 );
 

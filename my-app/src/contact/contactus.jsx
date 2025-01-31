@@ -63,16 +63,16 @@ const ContactUs = () => {
         {/* Right Side - Address Details */}
         <div>
           <h2 className="text-2xl font-semibold text-gray-800 mb-3">Address</h2>
-          <p className="text-gray-600 mb-4">66 Guild Street 512B Great North Town.</p>
+          <p className="text-gray-600 mb-4">Road NO. 2,Kukatpally, Hyderabad.</p>
 
           <h2 className="text-2xl font-semibold text-gray-800 mb-3">Phone</h2>
           <p className="text-gray-600 mb-4">
-            (+44) 123-456-789 <br /> (+44) 152-567-987
+            (+91) 9133077705 <br /> (+91) 0123456789
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-800 mb-3">Email</h2>
           <p className="text-gray-600 mb-4">
-            info@example.com <br /> info@domain.com
+            info@example.com <br /> bunnyservices@gmail.com
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-800 mb-3">

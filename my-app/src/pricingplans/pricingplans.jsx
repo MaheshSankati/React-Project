@@ -40,7 +40,7 @@ const PricingPlans = () => {
                   </li>
                 </ul>
                 <a
-                  href="contactus.html"
+                  href="appointment"
                   className="inline-block text-white bg-blue-500 hover:bg-blue-600 rounded-md px-6 py-3 font-semibold transition"
                 >
                   Choose Package
@@ -77,7 +77,7 @@ const PricingPlans = () => {
                   </li>
                 </ul>
                 <a
-                  href="contactus.html"
+                  href="appointment"
                   className="inline-block text-white bg-gray-700 hover:bg-gray-800 rounded-md px-6 py-3 font-semibold transition"
                 >
                   Choose Package
@@ -111,7 +111,7 @@ const PricingPlans = () => {
                   </li>
                 </ul>
                 <a
-                  href="contactus.html"
+                  href="appointment"
                   className="inline-block text-white bg-blue-500 hover:bg-blue-600 rounded-md px-6 py-3 font-semibold transition"
                 >
                   Choose Package

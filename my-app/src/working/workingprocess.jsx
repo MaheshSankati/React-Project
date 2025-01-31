@@ -7,7 +7,7 @@ const HowItWorks = () => {
       <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
         How It Works <br /> Our Working Process
       </h1>
-
+ 
       {/* Steps Container */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl">
         {/* Step One */}
