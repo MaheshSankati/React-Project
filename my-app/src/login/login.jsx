@@ -1,13 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../login/fbConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const route = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Login Successful!");
+      route("/");
+    } catch (error) {
+      console.error("Login Failed:", error.message);
+      // setError(error.message);
+    }
+    // console.log("Email:", email);
+    // console.log("Password:", password);
+    // setError("");
+    route("/")
+    setEmail("")
+    setPassword("")
   };
 
   return (
@@ -42,8 +58,8 @@ const Login = () => {
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
+          <button 
+            type="submit" to="/"
             className="w-full py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none"
           >
             Login
@@ -54,6 +70,7 @@ const Login = () => {
         <div className="text-sm text-center text-gray-500">
           <a href="/forgot-password" className="text-blue-500 hover:underline">Forgot Password?</a>
           <span className="mx-2">|</span>
+          {/* routee("/signup") */}
           <a href="/signup" className="text-blue-500 hover:underline">Create an account</a>
         </div>
       </div>
