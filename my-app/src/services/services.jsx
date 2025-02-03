@@ -4,27 +4,61 @@ import service02 from "../assets/service-02.jpg";
 import service03 from "../assets/service-03.jpg";
 import service04 from "../assets/service-04.jpg";
 
-const ServiceCard = ({ image, number, title, description, link }) => {
+const services = [
+  {
+    number: "01",
+    title: "Standard Car Wash",
+    description: "Keep your vehicle fine and running, We provide routine checks to ensure your vehicle remains in good condition.",
+    image: service01,
+    link: "/standard-car-washing",
+  },
+  {
+    number: "02",
+    title: "Vacuum Cleaning",
+    description: "Maintain a clean vehicle interior with our thorough vacuum cleaning services.",
+    image: service02,
+    link: "/vacuum-cleaning",
+  },
+  {
+    number: "03",
+    title: "Inner Detailing Wash",
+    description: "Ensure your vehicle's interior shines with our detailed cleaning service.",
+    image: service03,
+    link: "/inner-detailing-wash",
+  },
+  {
+    number: "04",
+    title: "Total Car Wash",
+    description: "Give your car the ultimate wash for a spotless finish, inside and out.",
+    image: service04,
+    link: "/total-car-wash",
+  },
+];
+
+const Card = ({ number, title, description, image,link}) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-      <div className="p-5  flex flex-col gap-4">
-        <div className="relative mb-4">
-          <h4 className="text-6xl font-bold text-red-500 opacity-10 absolute -top-2 -left-2">
-            {number}
-          </h4>
-        </div>
+    <div className="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+      {/* Image Section */}
+      <div className="relative">
+        <img src={image} alt={title} className="w-full h-56 object-cover" />
+      </div>
+
+      {/* Card Content */}
+      <div className="p-6 flex gap-4">
+        {/* Number */}
+        <h4 className="text-5xl font-bold text-red-500">{number}</h4>
+
+        {/* Text Content */}
         <div>
-          <h4 className="text-right font-semibold mb-2 text-gray-800">
-            <a href={link} className="hover:text-red-500 transition-colors">
-              {title}
-            </a>
-          </h4>
-          <p className="text-sm text-gray-600 mb-3 mt-5">{description}</p>
+          <h4 className="text-lg font-semibold text-gray-800">{title}</h4>
+          <p className="text-sm text-gray-600 mt-2">{description}</p>
+
+          {/* Read More Link */}
           <a
             href={link}
-            className="text-red-500 font-medium flex items-center hover:underline"
+            className="text-red-500 font-medium flex items-center gap-1 mt-3 hover:text-gray-600 transition"
           >
-            Read more
+          Read more →
           </a>
         </div>
       </div>
@@ -33,69 +67,36 @@ const ServiceCard = ({ image, number, title, description, link }) => {
 };
 
 const Services = () => {
-  const services = [
-    {
-      // image: {service01},
-      number: "01",
-      title: "Standard Car Wash",
-      description: <p> Keep your vehicle fine and running,<br/> We provide routine checks to ensure <br/> your vehicle remains in good condition.</p>,
-      link: "/standard-wash",
-    },
-    {
-      // image: {service02},
-      number: "02",
-      title: "Vacuum Cleaning",
-      description: <p>Maintain a clean vehicle interior<br/> with our thorough vacuum cleaning<br/> services.</p>,
-      link: "/vacuum",
-    },
-    {
-      // image: {service03},
-      number: "03",
-      title: "Inner Detailing Wash",
-      description: <p>Ensure your vehicle's interior shines<br/> with our detailed cleaning service.</p>,
-      link: "/inner-detailing",
-    }, 
-    {
-      // image: {service04},
-      number: "04",
-      title: "Total Car Wash",
-      description:<p>Give your car the ultimate wash<br/> for a spotless finish, inside and out.</p>,
-      link: "/total-wash",
-    },
-  ];
-
   return (
-    <section className="bg-gray-100 py-12">
-      <div className="container mx-auto text-center">
-        <span className="text-lg text-red-500 font-semibold uppercase">
-          Our Services
-        </span>
-        <h2 className="text-3xl font-bold text-gray-800 mt-2">
-          Explore Car Washing Services
-        </h2>
-        <div className="w-12 h-1 bg-red-600 mx-auto mt-2"></div>
-      </div>
-      <div className="relative overflow-scroll h-[250px] w-full p-5">
-      <div className="flex gap-6 items-center h-full">
-        <img src={service01} alt="Service 1" className="h-full w-auto" />
-        <img src={service02} alt="Service 2" className="h-full w-auto" />
-        <img src={service03} alt="Service 3" className="h-full w-auto" />
-        <img src={service04} alt="Service 4" className="h-full w-auto" />
-      </div>
-      <div className="mb-20 gap-6 items-center p-6 flex ">
-        {services.map((service, index) => (
-          <ServiceCard
-            key={index}
-            // image={service.image}
-            number={service.number}
-            title={service.title}
-            description={service.description}
-            link={service.link}
-          />
-        ))}
+    <div className="bg-gray-100 py-10 px-6">
+      <div className="max-w-6xl mx-auto ">
+        <div className="container mx-auto text-center">
+         <span className="text-lg text-red-600 font-semibold uppercase">
+           Our Services
+         </span>
+         <h2 className="text-3xl font-bold text-gray-800 mt-2">
+           Explore Car Washing Services
+         </h2>
+         <div className="w-12 h-1 bg-red-600 mx-auto mt-2"></div>
+       </div>
+
+        {/* Horizontal Scroll Wrapper */}
+        <div className="overflow-x-auto p-10">
+          <div className="flex space-x-6">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                number={service.number}
+                title={service.title}
+                description={service.description}
+                image={service.image}
+                link={service.link}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-    </section>
   );
 };
 

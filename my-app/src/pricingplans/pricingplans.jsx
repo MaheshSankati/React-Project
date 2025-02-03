@@ -9,9 +9,9 @@ const PricingPlans = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-lg uppercase mb-2 text-red-600">Pricing Plans</span>
+          <span className="text-lg uppercase mb-2 text-white">Pricing Plans</span>
           <h2 className="text-4xl font-bold mb-4 text-white">Choose Our Pricing Plans</h2>
-          <div className="w-12 h-1 bg-red-600 mx-auto mt-2"></div>
+          <div className="w-12 h-1 bg-white mx-auto mt-2"></div>
         </div>
         <div className="flex flex-wrap -mx-4 justify-center">
           {/* Basic Cleaning */}

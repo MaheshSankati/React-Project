@@ -29,13 +29,13 @@ const Navbar = () => {
               onMouseLeave={() => setIsPagesOpen(false)}
               className="hover:text-red-500"
             >
-              Page
+              Pages
             </button>
             {isPagesOpen && (
               <ul
                 onMouseEnter={() => setIsPagesOpen(true)}
                 onMouseLeave={() => setIsPagesOpen(false)}
-                className="absolute bg-white text-black mt-2 rounded-lg shadow-md w-40"
+                className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-40"
               >
                 {["About Us", "Appointment", "Offers", "Working Process"].map((item, index) => (
                   <li key={index}>
@@ -64,7 +64,7 @@ const Navbar = () => {
               <ul
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
-                className="absolute bg-white text-black mt-2 rounded-lg shadow-md w-48"
+                className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-48"
               >
                 {["Our Services", "Standard Car Washing", "Vacuum Cleaning", "Inner Detailing Wash", "Total Car Wash"].map((item, index) => (
                   <li key={index}>
@@ -93,7 +93,7 @@ const Navbar = () => {
               <ul
                 onMouseEnter={() => setIsTeamOpen(true)}
                 onMouseLeave={() => setIsTeamOpen(false)}
-                className="absolute bg-white text-black mt-2 rounded-lg shadow-md w-32"
+                className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-32"
               >
                 <li>
                   <Link

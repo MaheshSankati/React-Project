@@ -3,16 +3,16 @@ import about04 from "../assets/about-04.jpg";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8">
+    <div className="min-h-screen bg-white-100 flex flex-col items-center p-8 mt-16">
       {/* Top Heading */}
-      <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
+      <h1 className="text-4xl font-bold text-center text-gray-800 ">
         About Us
       </h1>
 
       {/* Content Section */}
-      <div className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg p-6 md:p-10 gap-8 max-w-6xl w-full">
+      <div className="flex flex-wrap items-center md:p-10 gap-8 ">
         {/* Left Image */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full">
           <img
             src={about04}
             alt="Car Washing"
@@ -21,7 +21,7 @@ const AboutUs = () => {
         </div>
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full ">
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">
             Professional Washing and Cleaning of Your Car More Than 25 Years.
           </h2>

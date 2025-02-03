@@ -3,9 +3,9 @@ import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa"
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8 mt-16">
       {/* Heading */}
-      <h1 className="text-4xl font-bold text-red-600 text-center mb-12 text-gray-800">
+      <h1 className="text-4xl font-bold text-red-600 text-center mb-1.5 text-gray-800">
         Contact Us
       </h1>
 

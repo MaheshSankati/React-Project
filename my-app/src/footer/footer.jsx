@@ -39,7 +39,7 @@ const Footer = () => {
 
         {/* Services Section */}
         <div className="w-full md:w-1/4 mb-8 md:mb-0 mr-16">
-          <h3 className="text-lg font-bold mb-4">Service</h3>
+          <h3 className="text-lg font-bold mb-4">Services</h3>
           <ul className="space-y-2">
             <li>
               <a href="/standard-car-washing" className="hover:text-gray-300">
@@ -74,13 +74,13 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="our-services" className="hover:text-gray-300">
-                Service
+              <a href="/contact" className="hover:text-gray-300">
+                Contact Us
               </a>
             </li>
             <li>
-              <a href="testimonials.html" className="hover:text-gray-300">
-                Testimonial
+              <a href="our-services" className="hover:text-gray-300">
+                Services
               </a>
             </li>
             <li>

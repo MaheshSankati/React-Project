@@ -8,8 +8,8 @@ import about03 from "../assets/about-03.jpg";
 
 const AboutSection = () => {
   return (
-    <div className="container mx-auto px-4 py-8 lg:py-16">
-      <div className="flex flex-wrap justify-between items-start mb-10">
+    <div className="container mx-auto px-4 py-8 lg:py-16 ">
+      <div className="flex flex-wrap justify-between items-start -mt-10">
         {/* Left Column */}
         <div className="w-full lg:w-1/2">
           <div>
@@ -24,7 +24,7 @@ const AboutSection = () => {
 
             {/* Feature 1 */}
             <div className="flex items-start mb-6">
-              <div className="w-12 h-12 flex-shrink-0">
+              <div className="w-12 h-12 flex-shrink-0 bg-red-600 rounded-full p-1.5">
                 <img
                   src={icon05}
                   alt="Modern Workshop Icon"
@@ -43,7 +43,7 @@ const AboutSection = () => {
 
             {/* Feature 2 */}
             <div className="flex items-start mb-6">
-              <div className="w-12 h-12 flex-shrink-0">
+              <div className="w-12 h-12 flex-shrink-0 bg-red-600 rounded-full p-1.5">
                 <img
                   src={icon06}
                   alt="Talented Workers Icon"
@@ -61,7 +61,7 @@ const AboutSection = () => {
 
             {/* Feature 3 */}
             <div className="flex items-start">
-              <div className="w-12 h-12 flex-shrink-0">
+              <div className="w-12 h-12 flex-shrink-0 bg-red-600 rounded-full p-1.5">
                 <img
                   src={icon07}
                   alt="Best Price Icon"
