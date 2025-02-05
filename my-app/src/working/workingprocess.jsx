@@ -1,8 +1,10 @@
 import React from "react";
+import Footer from "../footer/footer";
 
 const HowItWorks = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8">
+    <div>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8 mt-16">
       {/* Heading */}
       <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
         How It Works <br /> Our Working Process
@@ -52,6 +54,8 @@ const HowItWorks = () => {
           </p>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

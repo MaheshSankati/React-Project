@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Icon library
+import { FaUserCircle } from 'react-icons/fa';
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +21,9 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-lg">
           <li>
-            <Link to="/" className="hover:text-red-500">Home</Link>
+            <Link to="/" className="hover:text-red-500">
+              Home
+            </Link>
           </li>
 
           {/* Pages Dropdown */}
@@ -37,16 +41,18 @@ const Navbar = () => {
                 onMouseLeave={() => setIsPagesOpen(false)}
                 className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-40"
               >
-                {["About Us", "Appointment", "Offers", "Working Process"].map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      to={`/${item.toLowerCase().replace(" ", "-")}`}
-                      className="block px-4 py-2 text-sm hover:bg-gray-200"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                {["About Us", "Appointment", "Offers", "Working Process"].map(
+                  (item, index) => (
+                    <li key={index}>
+                      <Link
+                        to={`/${item.toLowerCase().replace(" ", "-")}`}
+                        className="block px-4 py-2 text-sm hover:bg-gray-200"
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             )}
           </li>
@@ -66,7 +72,13 @@ const Navbar = () => {
                 onMouseLeave={() => setIsServicesOpen(false)}
                 className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-48"
               >
-                {["Our Services", "Standard Car Washing", "Vacuum Cleaning", "Inner Detailing Wash", "Total Car Wash"].map((item, index) => (
+                {[
+                  "Our Services",
+                  "Standard Car Washing",
+                  "Vacuum Cleaning",
+                  "Inner Detailing Wash",
+                  "Total Car Wash",
+                ].map((item, index) => (
                   <li key={index}>
                     <Link
                       to={`/${item.toLowerCase().replace(/ /g, "-")}`}
@@ -108,10 +120,14 @@ const Navbar = () => {
           </li>
 
           <li>
-            <Link to="/contact" className="hover:text-red-500">Contact</Link>
+            <Link to="/contact" className="hover:text-red-500">
+              Contact
+            </Link>
           </li>
           <li>
-            <Link to="/login" className="hover:text-red-500">Login</Link>
+            <Link to="/login" className="hover:text-red-500 flex items-center">
+              <FaUserCircle className="mt-1 text-xl" /> {/* Profile icon */}
+            </Link>
           </li>
         </ul>
 
@@ -129,19 +145,29 @@ const Navbar = () => {
         <div className="md:hidden bg-white border-t">
           <ul className="flex flex-col space-y-2 text-lg p-4">
             <li>
-              <Link to="/" className="block hover:text-red-500">Home</Link>
+              <Link to="/" className="block hover:text-red-500">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/about" className="block hover:text-red-500">About</Link>
+              <Link to="/about" className="block hover:text-red-500">
+                About
+              </Link>
             </li>
             <li>
-              <Link to="/services" className="block hover:text-red-500">Services</Link>
+              <Link to="/services" className="block hover:text-red-500">
+                Services
+              </Link>
             </li>
             <li>
-              <Link to="/contact" className="block hover:text-red-500">Contact</Link>
+              <Link to="/contact" className="block hover:text-red-500">
+                Contact
+              </Link>
             </li>
             <li>
-              <Link to="/signup" className="block hover:text-red-500">Login</Link>
+              <Link to="/signup" className="block hover:text-red-500">
+                Login
+              </Link>
             </li>
           </ul>
         </div>

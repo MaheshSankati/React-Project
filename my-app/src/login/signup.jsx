@@ -17,14 +17,13 @@ const Signup = () => {
       setError("Passwords do not match!");
       return;
     }
-    try{
+    try {
       await createUserWithEmailAndPassword(auth, email, password);
-    alert("Signup Successful!");
-    route("/login");
-    }
-    catch (error) {
+      alert("Signup Successful!");
+      route("/login");
+    } catch (error) {
       console.error("Signup Failed:", error.message);
-      // setError(error.message);
+      setError(error.message);
     }
     setError(""); // Clear error if successful
     route("/login");
@@ -33,7 +32,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-16">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-700">
           Sign Up
@@ -109,12 +108,4 @@ const Signup = () => {
   );
 };
 
-function Signupp() {
-  return (
-    <div>
-      <Signup />
-    </div>
-  );
-}
-
-export default Signupp;
+export default Signup;

@@ -5,7 +5,7 @@ import team03 from "../assets/team-03.jpg";
 import team04 from "../assets/team-04.jpg";
 import team05 from "../assets/team-05.jpg";
 import team06 from "../assets/team-06.jpg";
-
+import Footer from "../footer/footer";
 
 const OurTeam = () => {
   const teamMembers = [
@@ -18,7 +18,8 @@ const OurTeam = () => {
   ];
 
   return (
-    <div className="container mx-auto p-8">
+    <div>
+    <div className="container mx-auto p-8 mt-10">
       <h2 className="text-3xl font-bold text-center mb-6">Our Team</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {teamMembers.map((member) => (
@@ -33,6 +34,8 @@ const OurTeam = () => {
           </div>
         ))}
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

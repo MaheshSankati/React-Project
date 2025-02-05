@@ -17,9 +17,8 @@ import TotalCarWash from "./services/total-car-wash";
 
 import Ourteam from "./team/ourteam";
 import ContactUs from "./contact/contactus";
-import Loginn from "./login/login";
-import Signupp from "./login/signup";
-
+import Login from "./login/login";
+import Signup from "./login/signup";
 
 
 const Mainpage = () => {
@@ -28,10 +27,10 @@ const Mainpage = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/appointment" element={<CarWashBooking />} />
         <Route path="/offers" element={<SpecialOffers />}/>
-        <Route path="/working" element={<HowItWorks />} />
+        <Route path="/working-process" element={<HowItWorks />} />
 
         <Route path="/our-services" element={<Services />} />
         <Route path="/standard-car-washing" element={<StandardCarWash />} />
@@ -41,8 +40,8 @@ const Mainpage = () => {
 
         <Route path="/team" element={<Ourteam />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/login" element={<Loginn />} />
-        <Route path="/signup" element={<Signupp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );

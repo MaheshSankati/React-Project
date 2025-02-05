@@ -2,18 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import Mainpage from "./mainpage";
-// import App from "./App";
-// import UncontrolledExample from "./services/servicess";
 
+import Mainpage from "./mainpage";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <App/> */}
     <Mainpage />
-    {/* <UncontrolledExample/> */}
   </React.StrictMode>
 );
 

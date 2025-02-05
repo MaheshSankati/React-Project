@@ -3,10 +3,12 @@ import wheeleashing from "../assets/WheelsWashing .png";
 import totalcarwash from "../assets/TotalCarWash.png";
 import innerDetailing from "../assets/InnerDetailingWash.png";
 import vacuumCleaning from "../assets/VaccumCleaning.png";
+import Footer from '../footer/footer';
 
 const SpecialOffers = () => {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div>
+    <div className="bg-gray-100 min-h-screen mt-16">
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-black text-center uppercase font-bold">Special Offers</h1>
@@ -93,6 +95,8 @@ const SpecialOffers = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

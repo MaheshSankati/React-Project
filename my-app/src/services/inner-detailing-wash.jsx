@@ -4,10 +4,12 @@ import servicedetail07 from '../assets/service-detail-07.jpg';
 import servicedetail08 from '../assets/service-detail-08.jpg';
 import servicedetail09 from '../assets/service-detail-09.jpg';
 import servicedetail10 from '../assets/service-detail-10.jpg';
+import Footer from '../footer/footer';
 
 const InnerDetailingWash = () => {
   return (
-    <div className="bg-gray-100 min-h-screen p-4">
+    <div>
+    <div className="bg-gray-100 min-h-screen p-4 mt-16">
         <h1 className="text-3xl uppercase font-bold text-center text-gray-800 mb-6">Inner Detailing Wash</h1>
       {/* Top Section with Image */}
       <div className="flex flex-col items-center">
@@ -59,6 +61,8 @@ const InnerDetailingWash = () => {
           the paint. With time, that coat fades away due to exposure to sunlight. Without the coat, the car
           looks really old and undesirable.
         </p>
+    </div>
+    <Footer/>
     </div>
   );
 };

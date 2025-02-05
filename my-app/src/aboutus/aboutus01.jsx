@@ -1,8 +1,10 @@
 import React from "react";
 import about04 from "../assets/about-04.jpg";
+import Footer from "../footer/footer";
 
 const AboutUs = () => {
   return (
+    <div>
     <div className="min-h-screen bg-white-100 flex flex-col items-center p-8 mt-16">
       {/* Top Heading */}
       <h1 className="text-4xl font-bold text-center text-gray-800 ">
@@ -41,6 +43,8 @@ const AboutUs = () => {
           </ul>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

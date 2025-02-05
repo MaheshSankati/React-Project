@@ -21,7 +21,7 @@ const CarWashBooking = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md mt-10">
+    <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md mt-16">
       <h2 className="text-2xl font-bold text-center mb-4">Car Wash Booking</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input

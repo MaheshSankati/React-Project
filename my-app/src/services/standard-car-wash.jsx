@@ -1,10 +1,12 @@
 import React from "react";
 import service01 from "../assets/service-01.jpg";
 import servicedetail02 from "../assets/service-detail-02.jpg";
+import Footer from "../footer/footer";
 
 const StandardCarWash = () => {
   return (
-    <div className="flex flex-col items-center p-4 space-y-8">
+    <div>
+    <div className="flex flex-col items-center p-4 space-y-8 mt-16">
       {/* Cover Image */}
       <div className="w-full">
       <h1 className="text-3xl text-center uppercase font-bold text-gray-800 mb-4">Standard Car Wash</h1>
@@ -80,6 +82,8 @@ const StandardCarWash = () => {
           far.
         </p>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

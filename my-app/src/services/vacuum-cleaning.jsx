@@ -2,15 +2,17 @@ import React from "react";
 import service02 from "../assets/service-02.jpg";
 import servicedetail04 from "../assets/service-detail-04.jpg";
 import servicedetail05 from "../assets/service-detail-05.jpg";
+import Footer from "../footer/footer";
 
 const VacuumCleaning = () => {
   return (
-    <div className="bg-gray-100 min-h-screen p-10">
-      <h1 className="text-black text-center uppercase text-4xl font-bold">Vacuum Cleaning</h1>
+    <div>
+    <div className="bg-gray-100 min-h-screen p-10 mt-16">
+      <h1 className="text-black text-center uppercase text-4xl font-bold mb-4">Vacuum Cleaning</h1>
 
       {/* Top Image Section */}
-      <div className="h-80 w-full object-cover rounded-lg shadow-lg" style={{ backgroundImage: `url(${service02})` }}>
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div className="h-80 w-full object-cover rounded-lg" style={{ backgroundImage: `url(${service02})` }}>
+        <div className="absolute inset-0 flex items-center justify-center">
           {/* <h1 className="text-white text-4xl font-bold">Vacuum Cleaning</h1> */}
         </div>
       </div>
@@ -66,6 +68,8 @@ const VacuumCleaning = () => {
           <li>The device is person friendly, and this makes it suitable for maximum vehicle owners.</li>
         </ul>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

@@ -1,8 +1,10 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import Footer from "../footer/footer";
 
 const ContactUs = () => {
   return (
+    <div>
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8 mt-16">
       {/* Heading */}
       <h1 className="text-4xl font-bold text-red-600 text-center mb-1.5 text-gray-800">
@@ -83,6 +85,8 @@ const ContactUs = () => {
           </p>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

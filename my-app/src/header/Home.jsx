@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import StickyHeader from "react-sticky-header";
 import bannerImage from "../assets/banner-01.jpg";
 import Navbar from "./navbar";
 
@@ -33,7 +32,7 @@ const Home = () => {
               Contact Us
             </Link>
             <Link
-              to="/about"
+              to="/about-us"
               className="px-6 py-3 bg-white text-red-600 text-lg font-bold rounded-lg hover:bg-gray-200"
             >
               Learn More

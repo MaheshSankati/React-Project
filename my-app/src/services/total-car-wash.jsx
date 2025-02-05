@@ -2,14 +2,17 @@ import React from 'react';
 import service04 from '../assets/service-04.jpg';
 import srevicedetail11 from '../assets/service-detail-11.jpg';
 import servicedetail12 from '../assets/service-detail-12.jpg';
+import Footer from '../footer/footer';
+
 
 const TotalCarWash = () => { 
   return (
-    <div className="bg-gray-100 min-h-screen p-5">
-     <h1 className="text-black text-center uppercase text-4xl font-bold">Total Car Wash</h1>
+    <div>
+    <div className="bg-gray-100 min-h-screen p-5 mt-16">
+     <h1 className="text-black text-center uppercase text-4xl font-bold mb-4">Total Car Wash</h1>
       {/* Top Cover Image */}
       <div className="h-80 w-full object-cover rounded-lg shadow-lg" style={{ backgroundImage: `url(${service04})` }}>
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute  flex items-center justify-center">
           {/* <h1 className="text-white text-4xl font-bold">Total Car Wash</h1> */}
         </div>
       </div>
@@ -64,6 +67,8 @@ const TotalCarWash = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };
