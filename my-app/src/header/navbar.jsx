@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Icon library
-import { FaUserCircle } from 'react-icons/fa';
-
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +18,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 text-lg">
+        <ul className="hidden md:flex space-x-6 text-lg ml-60">
           <li>
             <Link to="/" className="hover:text-red-500">
               Home
@@ -132,12 +131,14 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-800"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
-        </button>
+        <div>
+          <button
+            className="md:hidden text-gray-800"
+            onClick={(Home) => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -145,27 +146,47 @@ const Navbar = () => {
         <div className="md:hidden bg-white border-t">
           <ul className="flex flex-col space-y-2 text-lg p-4">
             <li>
-              <Link to="/" className="block hover:text-red-500">
+              <Link
+                to="/"
+                className="block hover:text-red-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="block hover:text-red-500">
+              <Link
+                to="/about-us"
+                className="block hover:text-red-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link to="/services" className="block hover:text-red-500">
+              <Link
+                to="/our-services"
+                className="block hover:text-red-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Services
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="block hover:text-red-500">
+              <Link
+                to="/contact"
+                className="block hover:text-red-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Contact
               </Link>
             </li>
             <li>
-              <Link to="/signup" className="block hover:text-red-500">
+              <Link
+                to="/login"
+                className="block hover:text-red-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Login
               </Link>
             </li>

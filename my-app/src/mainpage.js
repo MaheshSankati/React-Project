@@ -19,6 +19,7 @@ import Ourteam from "./team/ourteam";
 import ContactUs from "./contact/contactus";
 import Login from "./login/login";
 import Signup from "./login/signup";
+import ForgetPassword  from "./login/forgotPswd";
 
 
 const Mainpage = () => {
@@ -42,6 +43,7 @@ const Mainpage = () => {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgetPassword/>}/>
       </Routes>
     </Router>
   );
