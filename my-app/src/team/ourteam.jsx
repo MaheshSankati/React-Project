@@ -19,23 +19,26 @@ const OurTeam = () => {
 
   return (
     <div>
-    <div className="container mx-auto p-8 mt-10">
-      <h2 className="text-3xl font-bold text-center mb-6">Our Team</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {teamMembers.map((member) => (
-          <div key={member.id} className="bg-gray-200 p-4 rounded-lg shadow-md text-center">
-            <img
-              src={member.image}
-              alt={member.name} // ✅ Fixed: Only the name is used
-              className="w-40 h-40 mx-auto"
-            />
-            <h3 className="mt-4 text-xl font-semibold">{member.name}</h3>
-            <p className="text-gray-600">{member.role}</p>
-          </div>
-        ))}
+      <div className="container mx-auto p-8 mt-10">
+        <h2 className="text-3xl font-bold text-center mb-6">Our Team</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {teamMembers.map((member) => (
+            <div
+              key={member.id}
+              className="bg-gray-200 p-4 rounded-lg shadow-md text-center"
+            >
+              <img
+                src={member.image}
+                alt={member.name} // Fixed: Only the name is used
+                className="w-40 h-40 mx-auto"
+              />
+              <h3 className="mt-4 text-xl font-semibold">{member.name}</h3>
+              <p className="text-gray-600">{member.role}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 };

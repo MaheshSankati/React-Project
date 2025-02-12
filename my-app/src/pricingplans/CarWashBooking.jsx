@@ -69,7 +69,7 @@ const CarServiceForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-6">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-6 mt-16">
       <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-4">
           Car Servicing Booking
@@ -179,12 +179,24 @@ const CarServiceForm = () => {
           className="mt-6 p-4 border rounded bg-gray-50"
         >
           <h3 className="text-lg font-bold text-gray-700">Booking Summary</h3>
-          <p><strong>Name:</strong> {formData.name}</p>
-          <p><strong>Mobile:</strong> {formData.mobile}</p>
-          <p><strong>Address:</strong> {formData.address}</p>
-          <p><strong>Date:</strong> {formData.date}</p>
-          <p><strong>Service Type:</strong> {formData.serviceType}</p>
-          <p><strong>Service Amount:</strong> ₹{formData.serviceAmount}</p>
+          <p>
+            <strong>Name:</strong> {formData.name}
+          </p>
+          <p>
+            <strong>Mobile:</strong> {formData.mobile}
+          </p>
+          <p>
+            <strong>Address:</strong> {formData.address}
+          </p>
+          <p>
+            <strong>Date:</strong> {formData.date}
+          </p>
+          <p>
+            <strong>Service Type:</strong> {formData.serviceType}
+          </p>
+          <p>
+            <strong>Service Amount:</strong> ₹{formData.serviceAmount}
+          </p>
         </div>
       </div>
     </div>

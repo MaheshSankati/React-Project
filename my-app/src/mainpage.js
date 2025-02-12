@@ -19,33 +19,120 @@ import Ourteam from "./team/ourteam";
 import ContactUs from "./contact/contactus";
 import Login from "./login/login";
 import Signup from "./login/signup";
-import ForgetPassword  from "./login/forgotPswd";
 
+import ProtectedRoute from "./login/protestedroute";
+import { UserAuthContextProvider } from "./login/userauthcontext";
 
 const Mainpage = () => {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/appointment" element={<CarWashBooking />} />
-        <Route path="/offers" element={<SpecialOffers />}/>
-        <Route path="/working-process" element={<HowItWorks />} />
+    <UserAuthContextProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/about-us"
+            element={
+              <ProtectedRoute>
+                <AboutUs />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/appointment"
+            element={
+              <ProtectedRoute>
+                <CarWashBooking />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/offers"
+            element={
+              <ProtectedRoute>
+                <SpecialOffers />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/working-process"
+            element={
+              <ProtectedRoute>
+                <HowItWorks />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route path="/our-services" element={<Services />} />
-        <Route path="/standard-car-washing" element={<StandardCarWash />} />
-        <Route path="/vacuum-cleaning" element={<VacuumCleaning />}/>
-        <Route path="/inner-detailing-wash" element={<InnerDetailingWash />}/>
-        <Route path="/total-car-wash" element={<TotalCarWash />}/>
+          <Route
+            path="/our-services"
+            element={
+              <ProtectedRoute>
+                <Services />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/standard-car-washing"
+            element={
+              <ProtectedRoute>
+                <StandardCarWash />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/vacuum-cleaning"
+            element={
+              <ProtectedRoute>
+                <VacuumCleaning />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/inner-detailing-wash"
+            element={
+              <ProtectedRoute>
+                <InnerDetailingWash />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/total-car-wash"
+            element={
+              <ProtectedRoute>
+                <TotalCarWash />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route path="/team" element={<Ourteam />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/forgot-password" element={<ForgetPassword/>}/>
-      </Routes>
-    </Router>
+          <Route
+            path="/team"
+            element={
+              <ProtectedRoute>
+                <Ourteam />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <ProtectedRoute>
+                <ContactUs />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </Router>
+    </UserAuthContextProvider>
   );
 };
 

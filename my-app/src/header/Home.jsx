@@ -9,11 +9,14 @@ import Services from "../services/services";
 import PricingPlans from "../pricingplans/pricingplans";
 import Testimonials from "../Testimonials/testimonials";
 import Footer from "../footer/footer";
+import { useUserAuth } from "../login/userauthcontext";
 
 const Home = () => {
+  const { user } = useUserAuth();
+  console.log("User in Home: ", user);
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div
         className="h-screen w-full bg-cover bg-fixed bg-no-repeat flex flex-col justify-between"
         style={{ backgroundImage: `url(${bannerImage})` }}
@@ -40,13 +43,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <InfoBox/>
-      <AboutSection/>
-      <Services/>
-      <PricingPlans/>
-      <Testimonials/>
-      <Footer/>
-    </div> 
+      <InfoBox />
+      <AboutSection />
+      <Services />
+      <PricingPlans />
+      <Testimonials />
+      <Footer />
+    </div>
   );
 };
 

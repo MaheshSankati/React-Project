@@ -1,400 +1,86 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { auth } from "../login/fbConfig";
-// import {
-//   signInWithEmailAndPassword,
-//   fetchSignInMethodsForEmail,
-// } from "firebase/auth";
-
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [error, setError] = useState("");
-//   const route = useNavigate();
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       const signInMethods = await fetchSignInMethodsForEmail(auth, email);
-
-//       if (signInMethods.length === 0) {
-//         setError("No account found. please sign up first.");
-//         return;
-//       }
-
-//       await signInWithEmailAndPassword(auth, email, password);
-//       alert("Login Successful!");
-//       route("/");
-//     } catch (error) {
-//       console.error("Login Failed:", error.message);
-//       setError(error.message);
-//     }
-//     // route("/");
-//     setEmail("");
-//     setPassword("");
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-16">
-//       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
-//         <h2 className="text-2xl font-bold text-center text-gray-700">Login</h2>
-//         {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-//         <form onSubmit={handleSubmit} className="space-y-4">
-//           {/* Email Input */}
-//           <div>
-//             <label className="block text-gray-600 text-sm font-medium">
-//               Email
-//             </label>
-//             <input
-//               type="email"
-//               placeholder="Enter your email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-//               required
-//             />
-//           </div>
-
-//           {/* Password Input */}
-//           <div>
-//             <label className="block text-gray-600 text-sm font-medium">
-//               Password
-//             </label>
-//             <input
-//               type="password"
-//               placeholder="Enter your password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-//               required
-//             />
-//           </div>
-
-//           {/* Submit Button */}
-//           <button
-//             type="submit"
-//             to="/"
-//             className="w-full py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none"
-//           >
-//             Login
-//           </button>
-//         </form>
-
-//         {/* Forgot Password & Sign Up Links */}
-//         <div className="text-sm text-center text-gray-500">
-//           <a href="/forgot-password" className="text-blue-500 hover:underline">
-//             Forgot Password?
-//           </a>
-//           <span className="mx-2">|</span>
-//           {/* routee("/signup") */}
-//           <a href="/signup" className="text-blue-500 hover:underline">
-//             Create an account
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
-
-
-
-
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { auth } from "../login/fbConfig";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [error, setError] = useState("");
-//   const navigate = useNavigate();
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       await signInWithEmailAndPassword(auth, email, password);
-//       alert("Login Successful!");
-//       navigate("/");
-//     } catch (error) {
-//       console.error("Login Failed:", error.message);
-//     }
-
-//     setEmail("");
-//     setPassword("");
-//     setError("");
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-16">
-//       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
-//         <h2 className="text-2xl font-bold text-center text-gray-700">Login</h2>
-//         {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-//         <form onSubmit={handleSubmit} className="space-y-4">
-//           {/* Email Input */}
-//           <div>
-//             <label className="block text-gray-600 text-sm font-medium">
-//               Email
-//             </label>
-//             <input
-//               type="email"
-//               placeholder="Enter your email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-//               required
-//             />
-//           </div>
-
-//           {/* Password Input */}
-//           <div>
-//             <label className="block text-gray-600 text-sm font-medium">
-//               Password
-//             </label>
-//             <input
-//               type="password"
-//               placeholder="Enter your password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-//               required
-//             />
-//           </div>
-
-//           {/* Submit Button */}
-//           <button
-//             type="submit"
-//             className="w-full py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none"
-//           >
-//             Login
-//           </button>
-//         </form>
-
-//         {/* Forgot Password & Sign Up Links */}
-//         <div className="text-sm text-center text-gray-500">
-//           <a href="/forgot-password" className="text-blue-500 hover:underline">
-//             Forgot Password?
-//           </a>
-//           <span className="mx-2">|</span>
-//           <a href="/signup" className="text-blue-500 hover:underline">
-//             Create an account
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
-
-
-
-
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { auth, } from "../login/fbConfig";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [error, setError] = useState("");
-//   const navigate = useNavigate();
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       await signInWithEmailAndPassword(auth, email, password);
-//       alert("Login Successful!");
-//       navigate("/");
-//     } catch (error) {
-//       if (error.code === "auth/user-not-found") {
-//         alert("No account found. Redirecting to Sign Up...");
-//         navigate("/signup"); // Redirect to the signup page
-//       } else if (error.code === "auth/wrong-password") {
-//         setError("Incorrect password. Please try again.");
-//       } else {
-//         setError(error.message);
-//       }
-//       console.error("Login Failed:", error.message);
-//     }
-
-//     setEmail("");
-//     setPassword("");
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-16">
-//       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
-//         <h2 className="text-2xl font-bold text-center text-gray-700">Login</h2>
-//         {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-//         <form onSubmit={handleSubmit} className="space-y-4">
-//           {/* Email Input */}
-//           <div>
-//             <label className="block text-gray-600 text-sm font-medium">
-//               Email
-//             </label>
-//             <input
-//               type="email"
-//               placeholder="Enter your email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-//               required
-//             />
-//           </div>
-
-//           {/* Password Input */}
-//           <div>
-//             <label className="block text-gray-600 text-sm font-medium">
-//               Password
-//             </label>
-//             <input
-//               type="password"
-//               placeholder="Enter your password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-//               required
-//             />
-//           </div>
-
-//           {/* Submit Button */}
-//           <button
-//             type="submit"
-//             className="w-full py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none"
-//           >
-//             Login
-//           </button>
-//         </form>
-
-//         {/* Forgot Password & Sign Up Links */}
-//         <div className="text-sm text-center text-gray-500">
-//           <a href="/forgot-password" className="text-blue-500 hover:underline">
-//             Forgot Password?
-//           </a>
-//           <span className="mx-2">|</span>
-//           <a href="/signup" className="text-blue-500 hover:underline">
-//             Create an account
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
-
-
-
-
-
-
-
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../login/fbConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import GoogleButton from "react-google-button";
+import { useUserAuth } from "./userauthcontext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const { logIn, googleSignIn } = useUserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert("Login Successful!");
-      navigate("/");
-    } catch (error) {
-      if (error.code === "auth/user-not-found") {
-        alert("No account found. Please sign up first.");
-        navigate("/signup"); // Redirect to signup page
-      } else if (error.code === "auth/wrong-password") {
-        setError("Incorrect password. Please try again.");
-      } else {
-        setError("Login failed. Please check your credentials.");
-      }
-      console.error("Login Failed:", error.message);
+      await logIn(email, password);
+      navigate("/home");
+    } catch (err) {
+      setError(err.message);
     }
+  };
 
-    setEmail("");
-    setPassword("");
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/home");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 mt-16">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-700">Login</h2>
-        {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-gray-600 text-sm font-medium">
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-              required
-            />
-          </div>
+    <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4 mt-20">
+      <h2 className="text-xl font-semibold text-center">Login</h2>
+      {error && <div className="text-red-500 text-center">{error}</div>}
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <input
+            type="email"
+            placeholder="Email address"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-          <div>
-            <label className="block text-gray-600 text-sm font-medium">
-              Password
-            </label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-              required
-            />
-          </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
+        <div className="flex justify-center">
           <button
             type="submit"
-            className="w-full py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none"
+            className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
           >
-            Login
+            Log In
           </button>
-        </form>
-
-        <div className="text-sm text-center text-gray-500">
-          <a href="/forgot-password" className="text-blue-500 hover:underline">
-            Forgot Password?
-          </a>
-          <span className="mx-2">|</span>
-          <a href="/signup" className="text-blue-500 hover:underline">
-            Create an account
-          </a>
         </div>
+      </form>
+
+      <hr className="my-4" />
+
+      <div className="flex justify-center">
+        <GoogleButton
+          className="w-full"
+          type="dark"
+          onClick={handleGoogleSignIn}
+        />
+      </div>
+      <div className="p-4 text-center">
+        Don't have an account?{" "}
+        <Link to="/signup" className="text-blue-600 hover:underline">
+          Sign up
+        </Link>
       </div>
     </div>
   );
 };
 
 export default Login;
-
-
-
-

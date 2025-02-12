@@ -48,7 +48,7 @@
 
 
 import React, { useState } from "react";
-import { auth } from "../login/fbConfig"  // Import Firebase auth
+import { auth } from "../fbConfig"  // Import Firebase auth
 import { sendPasswordResetEmail } from "firebase/auth";
 
 const ForgotPassword = () => {

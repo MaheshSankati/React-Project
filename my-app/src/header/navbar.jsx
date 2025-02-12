@@ -1,13 +1,26 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { Menu, X } from "lucide-react"; // Icon library
 import { FaUserCircle } from "react-icons/fa";
+import { useUserAuth } from "../login/userauthcontext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPagesOpen, setIsPagesOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isTeamOpen, setIsTeamOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { user, logOut } = useUserAuth();
+  const navigate = useNavigate(); // Fix: Use navigate for redirection
+
+  const signOut = async () => {
+    try {
+      await logOut();
+      navigate("/"); // Redirect after logout
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full shadow-md border-b-2 z-50">
@@ -18,33 +31,27 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 text-lg ml-60">
+        <ul className="hidden md:flex space-x-6 text-lg ml-40">
           <li>
-            <Link to="/" className="hover:text-red-500">
+            <Link to="/home" className="hover:text-red-500">
               Home
             </Link>
           </li>
 
           {/* Pages Dropdown */}
-          <li className="relative">
-            <button
-              onMouseEnter={() => setIsPagesOpen(true)}
-              onMouseLeave={() => setIsPagesOpen(false)}
-              className="hover:text-red-500"
-            >
-              Pages
-            </button>
+          <li
+            className="relative"
+            onMouseEnter={() => setIsPagesOpen(true)}
+            onMouseLeave={() => setIsPagesOpen(false)}
+          >
+            <button className="hover:text-red-500">Pages</button>
             {isPagesOpen && (
-              <ul
-                onMouseEnter={() => setIsPagesOpen(true)}
-                onMouseLeave={() => setIsPagesOpen(false)}
-                className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-40"
-              >
+              <ul className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-40">
                 {["About Us", "Appointment", "Offers", "Working Process"].map(
                   (item, index) => (
                     <li key={index}>
                       <Link
-                        to={`/${item.toLowerCase().replace(" ", "-")}`}
+                        to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
                         className="block px-4 py-2 text-sm hover:bg-gray-200"
                       >
                         {item}
@@ -57,20 +64,14 @@ const Navbar = () => {
           </li>
 
           {/* Services Dropdown */}
-          <li className="relative">
-            <button
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-              className="hover:text-red-500"
-            >
-              Services
-            </button>
+          <li
+            className="relative"
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
+          >
+            <button className="hover:text-red-500">Services</button>
             {isServicesOpen && (
-              <ul
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-                className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-48"
-              >
+              <ul className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-48">
                 {[
                   "Our Services",
                   "Standard Car Washing",
@@ -80,7 +81,7 @@ const Navbar = () => {
                 ].map((item, index) => (
                   <li key={index}>
                     <Link
-                      to={`/${item.toLowerCase().replace(/ /g, "-")}`}
+                      to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
                       className="block px-4 py-2 text-sm hover:bg-gray-200"
                     >
                       {item}
@@ -92,20 +93,14 @@ const Navbar = () => {
           </li>
 
           {/* Team Dropdown */}
-          <li className="relative">
-            <button
-              onMouseEnter={() => setIsTeamOpen(true)}
-              onMouseLeave={() => setIsTeamOpen(false)}
-              className="hover:text-red-500"
-            >
-              Team
-            </button>
+          <li
+            className="relative"
+            onMouseEnter={() => setIsTeamOpen(true)}
+            onMouseLeave={() => setIsTeamOpen(false)}
+          >
+            <button className="hover:text-red-500">Team</button>
             {isTeamOpen && (
-              <ul
-                onMouseEnter={() => setIsTeamOpen(true)}
-                onMouseLeave={() => setIsTeamOpen(false)}
-                className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-32"
-              >
+              <ul className="absolute bg-white text-black -mt-0.5 rounded-lg shadow-md w-32">
                 <li>
                   <Link
                     to="/team"
@@ -123,22 +118,42 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
-          <li>
-            <Link to="/login" className="hover:text-red-500 flex items-center">
-              <FaUserCircle className="mt-1 text-xl" /> {/* Profile icon */}
-            </Link>
+
+          {/* User Dropdown */}
+          <li
+            className="relative"
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
+          >
+            <button className="hover:text-red-500 flex items-center">
+              <FaUserCircle className="mt-1 text-lg" />
+            </button>
+
+            {isDropdownOpen && (
+              <div className="absolute right-0 -mt-1 w-40 bg-white border border-gray-300 shadow-lg rounded-lg z-10">
+                <ul className="py-2">
+                  <li>{user && <span className="ml-1">{user.email}</span>}</li>
+                  <li>
+                    <button
+                      onClick={signOut}
+                      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-200"
+                    >
+                      Log Out
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            )}
           </li>
         </ul>
 
         {/* Mobile Menu Button */}
-        <div>
-          <button
-            className="md:hidden text-gray-800"
-            onClick={(Home) => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
-          </button>
-        </div>
+        <button
+          className="md:hidden text-gray-800"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -147,7 +162,7 @@ const Navbar = () => {
           <ul className="flex flex-col space-y-2 text-lg p-4">
             <li>
               <Link
-                to="/"
+                to="/home"
                 className="block hover:text-red-500"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -183,11 +198,20 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/login"
+                to="/"
                 className="block hover:text-red-500"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                className="block hover:text-red-500"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Logout
               </Link>
             </li>
           </ul>
