@@ -178,6 +178,7 @@ const CarServiceForm = () => {
           id="booking-summary"
           className="mt-6 p-4 border rounded bg-gray-50"
         >
+          <center><h1 className="text-lg font-bold text-red-600">Bunny's Car Servicing</h1></center>
           <h3 className="text-lg font-bold text-gray-700">Booking Summary</h3>
           <p>
             <strong>Name:</strong> {formData.name}
