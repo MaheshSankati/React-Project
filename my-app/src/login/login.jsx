@@ -31,6 +31,17 @@ const Login = () => {
     }
   };
 
+  const handleGuestLogin = async () => {
+    try {
+      await logIn("guest@example.com", "guestpassword"); // Example guest login
+      navigate("/home");
+    } catch (error) {
+      console.error("Guest login failed:", error.message);
+    }
+  };
+  
+  
+
   return (
     <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4 mt-20">
       <h2 className="text-xl font-semibold text-center">Login</h2>
@@ -79,6 +90,15 @@ const Login = () => {
           Sign up
         </Link>
       </div>
+      <div className="flex justify-center">
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+            onClick={handleGuestLogin}
+          >
+            Guest Login
+          </button>
+        </div>
     </div>
   );
 };
